@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
+    justify-content: flex-start;
     width: 800px;
     height: 900px;
     padding: 24px;
@@ -175,4 +175,136 @@
     line-height: 19.36px;
     text-align: left;
     color: white;
+}
+
+.add-todo-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+}
+
+.add-todo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+.add-category {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+.add-heading {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-align: left;
+}
+
+.add-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+#add-title-input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid rgba(153, 153, 153, 1);
+    border-radius: 4px;
+}
+
+.add-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+#add-description-input {
+    width: 100%;
+    height: 96px;
+    border: 1px solid rgba(153, 153, 153, 1);
+    border-radius: 4px;
+}
+
+.add-todo-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 16px;
+}
+
+.add-todo-actions-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.add-todo-create-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 102, 0, 1);
+}
+
+.add-todo-create-btn-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+}
+
+.add-todo-save-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 102, 0, 1);
+}
+
+.add-todo-save-btn-title {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    color: white;    
+}
+
+.add-todo-cancel-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: none;
+}
+
+.add-todo-cancel-btn-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    color: black;   
+}
+
+.separator {
+    border: 1px solid rgba(153, 153, 153, 1);
+    border-radius: 1px;
 }
