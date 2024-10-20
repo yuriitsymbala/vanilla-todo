@@ -184,8 +184,8 @@
     gap: 16px;
 }
 
-.add-todo-form {
-    display: flex;
+#add-todo-form {
+    display: none;
     flex-direction: column;
     width: 100%;
     gap: 12px;
@@ -241,14 +241,14 @@
     gap: 16px;
 }
 
-.add-todo-actions-wrapper {
-    display: flex;
+#add-todo-actions-wrapper {
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
 
-.add-todo-create-btn {
+#add-todo-create-btn {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -267,7 +267,7 @@
     white-space: nowrap;
 }
 
-.add-todo-save-btn {
+#add-todo-save-btn {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -286,7 +286,7 @@
     color: white;    
 }
 
-.add-todo-cancel-btn {
+#add-todo-cancel-btn {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -304,7 +304,8 @@
     color: black;   
 }
 
-.separator {
+#separator {
+    display: none;
     border: 1px solid rgba(153, 153, 153, 1);
     border-radius: 1px;
 }
