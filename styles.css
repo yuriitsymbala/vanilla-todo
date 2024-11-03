@@ -213,10 +213,10 @@
 }
 
 #add-title-input {
-    width: 100%;
     height: 32px;
     border: 1px solid rgba(153, 153, 153, 1);
     border-radius: 4px;
+    padding: 0px 10px;
 }
 
 .add-description {
@@ -227,10 +227,10 @@
 }
 
 #add-description-input {
-    width: 100%;
     height: 96px;
     border: 1px solid rgba(153, 153, 153, 1);
     border-radius: 4px;
+    padding: 0px 10px;
 }
 
 .add-todo-actions {
