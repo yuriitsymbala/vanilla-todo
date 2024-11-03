@@ -82,7 +82,7 @@
     text-transform: uppercase;
 }
 
-.todo-list-container {
+#todo-list-container {
     display: flex;
     flex-direction: column;
     width: 100%;
