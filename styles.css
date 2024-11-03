@@ -309,3 +309,7 @@
     border: 1px solid rgba(153, 153, 153, 1);
     border-radius: 1px;
 }
+
+.active {
+    color: rgba(255, 102, 0, 1);
+}

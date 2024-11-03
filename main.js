@@ -6,6 +6,7 @@ const addTodoForm = document.getElementById('add-todo-form');
 const actionsBtnWrapper = document.getElementById('add-todo-actions-wrapper');
 const titleInput = document.getElementById('add-title-input');
 const subtitleInput = document.getElementById('add-description-input')
+const categoryInput = 'Домашні Страви';
 const todoListContainer = document.getElementById('todo-list-container');
 
 const todos = [
@@ -93,8 +94,21 @@ function fetchTodos() {
     todoCell.appendChild(todoDoneBtn);
 }
 }
-
 fetchTodos();
+
+function fetchCategories() {
+    document.getElementById(0).classList.add('active');
+    for (let index = 0; index < 3; index++) {
+        const categoryBtn = document.getElementById(index);
+        categoryBtn.onclick = (event) => {
+            event.preventDefault();
+            categoryInput = categoryBtn.textContent.toUpperCase();
+            document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            categoryBtn.classList.add('active');
+        }
+    }
+}
+fetchCategories();
 
 /* show/hide/save new todo */
 createBtn.onclick = () => {
@@ -114,13 +128,14 @@ saveBtn.onclick = () => {
         id: Date.now(),
         title: titleInput.value,
         description: subtitleInput.value,
-        category: 'ДОМАШНІ СТРАВИ',
+        category: categoryInput,
         isDone: false
     };
     todos.push(newTodo);
     fetchTodos();
     titleInput.value = '';
     subtitleInput.value = '';
+    categoryInput = 'Домашні Страви';
 };
 
 cancelBtn.onclick = () => {
@@ -130,7 +145,7 @@ cancelBtn.onclick = () => {
     createBtn.style.display = 'flex';
 
     titleInput.value = '';
-    subtitleInput.value = ''
+    subtitleInput.value = '';
+    categoryInput = 'Домашні Страви';
 };
 
-// Add event listener to buttons array and set the category type for new task
