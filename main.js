@@ -4,31 +4,10 @@ const cancelBtn = document.getElementById('add-todo-cancel-btn');
 const separator = document.getElementById('separator');
 const addTodoForm = document.getElementById('add-todo-form');
 const actionsBtnWrapper = document.getElementById('add-todo-actions-wrapper');
+const titleInput = document.getElementById('add-title-input');
+const subtitleInput = document.getElementById('add-description-input')
 const todoListContainer = document.getElementById('todo-list-container');
 
-/* show/hide add-todo-container */
-createBtn.onclick = () => {
-    separator.style.display = 'flex';
-    addTodoForm.style.display = 'flex';
-    actionsBtnWrapper.style.display = 'flex';
-    createBtn.style.display = 'none';
-};
-
-saveBtn.onclick = () => {
-    separator.style.display = 'none';
-    addTodoForm.style.display = 'none';
-    actionsBtnWrapper.style.display = 'none';
-    createBtn.style.display = 'flex';
-};
-
-cancelBtn.onclick = () => {
-    separator.style.display = 'none';
-    addTodoForm.style.display = 'none';
-    actionsBtnWrapper.style.display = 'none';
-    createBtn.style.display = 'flex';
-};
-
-/* fetch todos */
 const todos = [
     {
         id: 0,
@@ -45,9 +24,10 @@ const todos = [
         isDone: true
     }
 ];
- 
-/* todo cell configuration */
-for (const todo of todos) {
+
+function fetchTodos() {
+    todoListContainer.innerHTML = '';
+    for (const todo of todos) {
     const todoCell = document.createElement('div');
     todoCell.className = 'todo-item';
     todoListContainer.appendChild(todoCell);
@@ -112,3 +92,45 @@ for (const todo of todos) {
 `;
     todoCell.appendChild(todoDoneBtn);
 }
+}
+
+fetchTodos();
+
+/* show/hide/save new todo */
+createBtn.onclick = () => {
+    separator.style.display = 'flex';
+    addTodoForm.style.display = 'flex';
+    actionsBtnWrapper.style.display = 'flex';
+    createBtn.style.display = 'none';
+};
+
+saveBtn.onclick = () => {
+    separator.style.display = 'none';
+    addTodoForm.style.display = 'none';
+    actionsBtnWrapper.style.display = 'none';
+    createBtn.style.display = 'flex';
+
+    const newTodo = {
+        id: Date.now(),
+        title: titleInput.value,
+        description: subtitleInput.value,
+        category: 'ДОМАШНІ СТРАВИ',
+        isDone: false
+    };
+    todos.push(newTodo);
+    fetchTodos();
+    titleInput.value = '';
+    subtitleInput.value = '';
+};
+
+cancelBtn.onclick = () => {
+    separator.style.display = 'none';
+    addTodoForm.style.display = 'none';
+    actionsBtnWrapper.style.display = 'none';
+    createBtn.style.display = 'flex';
+
+    titleInput.value = '';
+    subtitleInput.value = ''
+};
+
+// Add event listener to buttons array and set the category type for new task
